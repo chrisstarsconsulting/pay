@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2026 Execution Blueprint — Strategist Hope</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1f3d;--gold:#c9a84c;--gold2:#e8c97a;--cream:#fdf8f0;--white:#fff;--gray:#6b7280;--light:#f9f5ee;--red:#dc2626;--green:#16a34a;--border:rgba(201,168,76,0.2);--serif:'Playfair Display',serif;--sans:'Lato',sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--navy);overflow-x:hidden}
+.urgency-bar{background:var(--navy);color:var(--gold2);text-align:center;padding:.65rem 1rem;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;border-bottom:2px solid var(--gold)}
+.urgency-bar span{color:#ff6b6b}
+.hero{background:linear-gradient(135deg,#0f1f3d,#1a3460,#162444);padding:4rem 1.5rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:999px;padding:.4rem 1.2rem;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.5rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,7vw,3.8rem);font-weight:900;line-height:1.08;color:#fff;margin-bottom:1rem}
+.hero h1 .gold{color:var(--gold2)}
+.hero h1 em{font-style:italic}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.8;max-width:520px;margin:0 auto 2rem}
+.hero-sub strong{color:var(--gold2)}
+.countdown-box{background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);border-radius:16px;padding:1.5rem 1rem;max-width:400px;margin:0 auto 2rem}
+.cd-label-top{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.cd-dot{width:7px;height:7px;border-radius:50%;background:#ff6b6b;animation:pulse 1.2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,107,.6)}50%{box-shadow:0 0 0 8px rgba(255,107,107,0)}}
+.countdown-wrap{display:flex;align-items:center;justify-content:center;gap:.5rem}
+.cd-block{display:flex;flex-direction:column;align-items:center;min-width:70px;background:rgba(15,31,61,.6);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:.8rem .5rem}
+.cd-num{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:#fff;line-height:1}
+.cd-lbl{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.3rem}
+.cd-sep{font-size:1.8rem;color:var(--gold);font-weight:700;margin-bottom:8px}
+.discount-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.9rem}
+.discount-note strong{color:#ff6b6b}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#e8a020);color:var(--navy);font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:1.1rem 2.5rem;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(201,168,76,.45)}
+.cta-note{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.6rem;text-align:center}
+.cta-note2{font-size:.72rem;color:var(--gray);margin-top:.6rem;text-align:center}
+.cta-center{text-align:center;margin:2.5rem 0}
+section{padding:4rem 1.5rem}
+.sec-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;font-weight:700}
+.sec-title{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:1rem}
+.sec-title em{font-style:italic;color:var(--gold)}
+.story{background:#fff}
+.story-inner{max-width:680px;margin:0 auto}
+.story p{font-size:1rem;line-height:1.9;color:#374151;margin-bottom:1.4rem}
+.story p strong{color:var(--navy)}
+.blockquote{border-left:3px solid var(--gold);padding:1.2rem 1.5rem;background:var(--light);border-radius:0 10px 10px 0;margin:2rem 0;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--navy);line-height:1.75}
+.blockquote cite{display:block;font-size:.8rem;font-style:normal;color:var(--gray);margin-top:.6rem;font-family:var(--sans)}
+.host-sec{background:var(--light);text-align:center}
+.host-inner{max-width:580px;margin:0 auto}
+.host-img-wrap{position:relative;display:inline-block;margin-bottom:2rem}
+.host-ring{position:absolute;inset:-4px;border-radius:20px;background:linear-gradient(135deg,var(--gold),#fff,var(--gold2));z-index:0}
+.host-img{width:240px;height:300px;object-fit:cover;object-position:top center;border-radius:16px;position:relative;z-index:1;display:block}
+.host-name{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+.host-title{font-size:.85rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:1.2rem}
+.host-bio{font-size:.92rem;color:#374151;line-height:1.85;text-align:left;margin-bottom:1rem}
+.host-stats{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-top:1.5rem}
+.host-stat{text-align:center;padding:.9rem 1.3rem;background:#fff;border:1px solid var(--border);border-radius:12px}
+.host-stat-num{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--gold)}
+.host-stat-lbl{font-size:.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.inside-sec{background:var(--navy)}
+.inside-grid{display:flex;flex-direction:column;gap:1rem;max-width:600px;margin:1.5rem auto 0}
+.inside-item{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:1.2rem;transition:border-color .3s}
+.inside-item:hover{border-color:rgba(201,168,76,.4)}
+.inside-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#e8a020);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.inside-item h4{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.inside-item p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6}
+.testi-sec{background:var(--light)}
+.testi-grid{display:flex;flex-direction:column;gap:1.2rem;max-width:600px;margin:2rem auto 0}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.8rem;position:relative}
+.testi-card::before{content:'"';font-family:var(--serif);font-size:5rem;color:#f5e6b8;position:absolute;top:-.5rem;left:1rem;line-height:1;pointer-events:none}
+.testi-stars{color:var(--gold);font-size:.85rem;margin-bottom:.8rem}
+.testi-text{font-family:var(--serif);font-style:italic;font-size:.95rem;line-height:1.75;color:#374151;margin-bottom:1.2rem}
+.testi-author{display:flex;align-items:center;gap:.8rem}
+.testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--navy));display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.testi-name{font-size:.85rem;font-weight:700;color:var(--navy)}
+.testi-loc{font-size:.72rem;color:var(--gray);margin-top:.1rem}
+.its-time{background:linear-gradient(135deg,var(--navy),#1a3460);text-align:center;padding:4rem 1.5rem}
+.its-time h2{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:1.5rem}
+.its-time h2 em{font-style:italic;color:var(--gold2)}
+.its-time-list{max-width:450px;margin:0 auto 2rem;text-align:left}
+.its-time-list p{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.85;padding:.3rem 0 .3rem 1.5rem;position:relative}
+.its-time-list p::before{content:'✓';position:absolute;left:0;color:var(--gold2);font-weight:700}
+.payment-sec{background:var(--cream);padding:4rem 1.5rem;text-align:center}
+.payment-box{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:2.5rem 1.8rem;max-width:480px;margin:0 auto;position:relative;overflow:hidden}
+.payment-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold))}
+.pay-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.8rem}
+.pay-title{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.pay-sub{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem;line-height:1.6}
+.pcd-box{background:var(--navy);border-radius:12px;padding:1.2rem;margin-bottom:1.5rem}
+.pcd-lbl{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold2);margin-bottom:.8rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.pcd-wrap{display:flex;align-items:center;justify-content:center;gap:.4rem}
+.pcd-block{display:flex;flex-direction:column;align-items:center;min-width:55px}
+.pcd-num{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:#fff;line-height:1}
+.pcd-lbl2{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.2rem}
+.pcd-sep{font-size:1.4rem;font-weight:700;color:var(--gold);margin-bottom:6px}
+.price-wrap{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
+.price-old{font-size:1.3rem;color:#9ca3af;text-decoration:line-through;font-family:var(--serif)}
+.price-new{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--navy);line-height:1}
+.price-badge{background:#fee2e2;color:#dc2626;font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:999px}
+.acc-card{background:var(--light);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;text-align:left}
+.acc-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.acc-row:last-child{border-bottom:none}
+.acc-key{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);font-weight:700}
+.acc-val{font-size:.92rem;font-weight:700;color:var(--navy)}
+.acc-num-row{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--border)}
+.acc-num{font-size:1.4rem;font-weight:900;color:var(--navy);letter-spacing:.05em;font-family:var(--serif)}
+.copy-btn{display:flex;align-items:center;gap:.35rem;background:var(--navy);color:var(--gold2);border:none;border-radius:8px;padding:.45rem .9rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:background .25s;font-family:var(--sans)}
+.copy-btn.copied{background:var(--green);color:#fff}
+.amt-box{background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:1rem;margin-bottom:1.5rem;text-align:center}
+.amt-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#92400e;font-weight:700;margin-bottom:.3rem}
+.amt-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:#92400e}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;background:#25d366;color:#fff;border:none;border-radius:12px;padding:1.1rem;font-family:var(--sans);font-size:.88rem;font-weight:700;letter-spacing:.08em;cursor:pointer;text-decoration:none;transition:background .25s,transform .25s}
+.wa-btn:hover{background:#1db954;transform:translateY(-2px)}
+.secure-row{display:flex;align-items:center;justify-content:center;gap:.4rem;font-size:.7rem;color:var(--gray);margin-top:1rem}
+footer{background:var(--navy);padding:2.5rem 1.5rem;text-align:center;color:rgba(255,255,255,.35);font-size:.72rem;line-height:1.8}
+.float-btn{position:fixed;bottom:1.5rem;right:1rem;z-index:999;background:linear-gradient(135deg,var(--gold),#e8a020);color:var(--navy);border:none;border-radius:999px;padding:.75rem 1.4rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 25px rgba(201,168,76,.5);text-decoration:none;display:flex;align-items:center;gap:.4rem;animation:fpulse 2.5s ease-in-out infinite}
+@keyframes fpulse{0%,100%{box-shadow:0 8px 25px rgba(201,168,76,.5)}50%{box-shadow:0 8px 40px rgba(201,168,76,.85)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">⚡ Discount Expires In <span id="bar-time">23:00:00</span> — Only <span>7 slots</span> remaining</div>
+
+<section class="hero">
+  <div class="hero-eyebrow">✦ Limited Time Offer · 2026</div>
+  <h1>Your <em class="gold">2026 Execution</em><br>Blueprint For <span class="gold">Clarity,</span><br><em>Structure &amp; Global Impact</em></h1>
+  <p class="hero-sub">The proven framework that helps <strong>career mums in their 40s–60s</strong> rebuild their lives, renew their confidence and elevate their personal brands — with calm, clarity and intention.</p>
+  <div class="countdown-box">
+    <div class="cd-label-top"><span class="cd-dot"></span> Discount expires in</div>
+    <div class="countdown-wrap">
+      <div class="cd-block"><span class="cd-num" id="h-h">23</span><span class="cd-lbl">Hours</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="cd-num" id="h-m">00</span><span class="cd-lbl">Mins</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="cd-num" id="h-s">00</span><span class="cd-lbl">Secs</span></div>
+    </div>
+    <p class="discount-note">After this, price returns to <strong>₦25,000</strong></p>
+  </div>
+  <a href="#payment" class="cta-btn">🔥 Get Blueprint — ₦7,999 Only</a>
+  <p class="cta-note">Was ₦25,000 · Save ₦17,001 Today</p>
+</section>
+
+<section class="story reveal">
+  <div class="story-inner">
+    <p class="sec-label">The Truth She Carries</p>
+    <h2 class="sec-title">There often comes a <em>quiet moment</em> in a woman's life when everything pauses.</h2>
+    <p>Not because she is tired. Not because she is confused. But because she suddenly becomes aware of the truth she has carried for years.</p>
+    <p>She has held the home together. She has delivered at work. She has supported everyone around her. She has carried emotional loads no one else sees.</p>
+    <p>Yet deep inside, she longs for something more. <strong>A life with structure. A routine that brings calm. A clear sense of direction. A year that feels purposeful instead of overwhelming.</strong></p>
+    <p>Many career mums in their 40s to 60s reach this moment silently. They feel stretched, scattered and uncertain of what their next season requires.</p>
+    <div class="blockquote">This longing is not a sign of weakness. It is the early signal of transformation.</div>
+    <p>I understand this deeply because I lived it. Years ago, I ventured into a business worth millions. Without the right structure, everything collapsed and I sank into a depressive state. Not because I lacked talent, but because I lacked a system that could support my growth.</p>
+    <p>When I changed my career path in 2016, I carried this as my case study. I spent three years understanding empowered structure, predictable growth and clarity. Then in 2021, I applied the same framework to a career mum who wanted to build an educational career and school.</p>
+    <div class="blockquote">"Hmmm. It is the bomb. I never saw it this big. The way God used you to open my eyes about the vision is mind blowing. I wish I knew this earlier. No knowledge is wasted."<cite>— Mrs Osinamo</cite></div>
+    <p>Her transformation confirmed a powerful truth. <strong>When a woman receives the right structure, her entire life shifts.</strong> This is why I created the 2026 Execution Blueprint.</p>
+    <div class="cta-center">
+      <a href="#payment" class="cta-btn">✨ I'm Ready — Get My Blueprint</a>
+      <p class="cta-note2">Join 70+ women who have already transformed</p>
+    </div>
+  </div>
+</section>
+
+<section class="host-sec reveal">
+  <div class="host-inner">
+    <p class="sec-label">Your Guide</p>
+    <div class="host-img-wrap">
+      <div class="host-ring"></div>
+      <img src="data:image/jpeg;base64,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" alt="Strategist Hope" class="host-img"/>
+    </div>
+    <h2 class="host-name">Strategist Hope</h2>
+    <p class="host-title">Brand Strategist · Life Structure Coach</p>
+    <p class="host-bio">Eight years of working with career mums across Africa, America and Europe have given Strategist Hope a deep understanding of what women in transition truly need — not motivation, but <strong>structure, clarity and a companion that guides their entire year.</strong></p>
+    <p class="host-bio">Her frameworks have helped over 70 women one-on-one and hundreds in group sessions rebuild their lives, elevate their personal brands and step into global relevance.</p>
+    <div class="host-stats">
+      <div class="host-stat"><div class="host-stat-num">70+</div><div class="host-stat-lbl">Women Coached</div></div>
+      <div class="host-stat"><div class="host-stat-num">8 Yrs</div><div class="host-stat-lbl">Experience</div></div>
+      <div class="host-stat"><div class="host-stat-num">3</div><div class="host-stat-lbl">Continents</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside-sec reveal">
+  <div style="max-width:600px;margin:0 auto;text-align:center">
+    <p class="sec-label" style="color:var(--gold2)">What You Receive</p>
+    <h2 class="sec-title" style="color:#fff">Inside The <em>Blueprint</em></h2>
+    <p style="color:rgba(255,255,255,.55);font-size:.9rem;margin-bottom:.5rem">A calm, clear and beautifully designed structure for the career mum ready to step into 2026 with intention.</p>
+  </div>
+  <div class="inside-grid">
+    <div class="inside-item"><div class="inside-icon">🗺️</div><div><h4>Full-Year Vision Map</h4><p>Sets your direction for the entire 2026 with clarity and calm focus</p></div></div>
+    <div class="inside-item"><div class="inside-icon">📊</div><div><h4>Monthly Self-Audits</h4><p>Understand what each season requires and adjust with wisdom</p></div></div>
+    <div class="inside-item"><div class="inside-icon">🎯</div><div><h4>Goal Mapping Templates</h4><p>Remove confusion and map your goals with precision and purpose</p></div></div>
+    <div class="inside-item"><div class="inside-icon">📅</div><div><h4>Weekly Planners</h4><p>Keep you consistent, intentional and moving forward every week</p></div></div>
+    <div class="inside-item"><div class="inside-icon">🏠</div><div><h4>Family-Life Check-ins</h4><p>Strengthen your home while building your career and brand</p></div></div>
+    <div class="inside-item"><div class="inside-icon">🌟</div><div><h4>Year-End Legacy Framework</h4><p>Reflect meaningfully on your growth and set your legacy in motion</p></div></div>
+    <div class="inside-item"><div class="inside-icon">🖨️</div><div><h4>Printable Templates</h4><p>Beautiful, ready-to-print templates that support your participation</p></div></div>
+    <div class="inside-item"><div class="inside-icon">⚡</div><div><h4>Strategy Framework</h4><p>A complete system that restructures your entire 2026 for success</p></div></div>
+  </div>
+  <div class="cta-center">
+    <a href="#payment" class="cta-btn">💛 Claim My Blueprint Now</a>
+    <p class="cta-note">Only ₦7,999 — Discount ends soon</p>
+  </div>
+</section>
+
+<section class="testi-sec reveal">
+  <div style="text-align:center;max-width:600px;margin:0 auto">
+    <p class="sec-label">What Women Are Saying</p>
+    <h2 class="sec-title">Real Transformations. <em>Real Results.</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Good morning, Strategist Hope. This name fits you. I implemented what you instructed and I just landed my first job offer. I am super excited. Thank you for rebirthing my dreams."</p><div class="testi-author"><div class="testi-av">BA</div><div><div class="testi-name">Mrs Blossom Akin</div><div class="testi-loc">Nigeria</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"I was thoroughly impressed. From the moment I reached out, she was responsive and professional. The quality of service exceeded my expectations. Highly recommend!"</p><div class="testi-author"><div class="testi-av">CA</div><div><div class="testi-name">Coach Aish</div><div class="testi-loc">Nigeria</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"I want to express my heartfelt gratitude to Coach Hope. Her guidance and expertise were invaluable. If you need someone to support a writing or creative project, I highly recommend her."</p><div class="testi-author"><div class="testi-av">AS</div><div><div class="testi-name">Mrs Abies Sonia</div><div class="testi-loc">United Kingdom</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"I must confess, you are an angel strategist. Thank you for birthing my dream of becoming an author in just a few weeks. Your frameworks are truly global."</p><div class="testi-author"><div class="testi-av">IF</div><div><div class="testi-name">Mrs Ifeoma</div><div class="testi-loc">U.S.A</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Strategist Hope is a woman of purpose, creative and innovative. Her work is excellent. Any idea you give her, she brings it to life with clarity."</p><div class="testi-author"><div class="testi-av">FO</div><div><div class="testi-name">Dr. Florence Osuki</div><div class="testi-loc">Nigeria</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Strategist Hope is an executor extraordinaire. A rare blend of clarity, precision and brilliance. She transforms fragmented ideas into a cohesive, compelling masterpiece."</p><div class="testi-author"><div class="testi-av">CE</div><div><div class="testi-name">Mrs Chiwemma Essien</div><div class="testi-loc">United Kingdom</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Chrisstars Coaching helped me break free from my comfort zone and maximize my skills. I am becoming the best version of myself and I am truly grateful."</p><div class="testi-author"><div class="testi-av">LA</div><div><div class="testi-name">Mrs Lillian Anyebe</div><div class="testi-loc">Nigeria</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The quality of your service delivery has been nothing short of excellent and highly effective. You are incredibly diligent, consistently approaching your work with your whole heart."</p><div class="testi-author"><div class="testi-av">OM</div><div><div class="testi-name">Mrs Oluchi Madu</div><div class="testi-loc">United Kingdom</div></div></div></div>
+  </div>
+</section>
+
+<section class="its-time reveal">
+  <p class="sec-label" style="color:var(--gold2)">//  It's Time</p>
+  <h2>2026 Will Not Change Because<br>The Calendar Changes.<br><em>It Will Change Because<br>Your Structure Changes.</em></h2>
+  <div class="its-time-list">
+    <p>If you are tired of doing purpose alone…</p>
+    <p>If you desire clarity, direction and a calm routine…</p>
+    <p>If you want to elevate your personal brand into global relevance…</p>
+    <p>If you want a companion that guides your entire year…</p>
+  </div>
+  <a href="#payment" class="cta-btn">🌟 Step Into Your Fresh Air Now</a>
+  <p class="cta-note">Get the Blueprint for ₦7,999 before price returns to ₦25,000</p>
+</section>
+
+<section class="payment-sec" id="payment">
+  <div style="text-align:center;margin-bottom:2rem">
+    <p class="sec-label">Secure Your Copy</p>
+    <h2 class="sec-title">Complete Your <em>Payment</em></h2>
+    <p style="font-size:.9rem;color:var(--gray);max-width:400px;margin:.5rem auto 0">Make a bank transfer to the details below then send your proof via WhatsApp</p>
+  </div>
+  <div class="payment-box">
+    <p class="pay-label">🔒 Secure Bank Transfer</p>
+    <h3 class="pay-title">2026 Execution Blueprint</h3>
+    <p class="pay-sub">Pay once. Access forever. Transform your entire year.</p>
+    <div class="pcd-box">
+      <div class="pcd-lbl"><span class="cd-dot"></span> Discount expires in</div>
+      <div class="pcd-wrap">
+        <div class="pcd-block"><span class="pcd-num" id="p-h">23</span><span class="pcd-lbl2">Hours</span></div>
+        <span class="pcd-sep">:</span>
+        <div class="pcd-block"><span class="pcd-num" id="p-m">00</span><span class="pcd-lbl2">Mins</span></div>
+        <span class="pcd-sep">:</span>
+        <div class="pcd-block"><span class="pcd-num" id="p-s">00</span><span class="pcd-lbl2">Secs</span></div>
+      </div>
+    </div>
+    <div class="price-wrap">
+      <span class="price-old">₦25,000</span>
+      <span class="price-new">₦7,999</span>
+      <span class="price-badge">68% OFF</span>
+    </div>
+    <div class="acc-card">
+      <div class="acc-row"><span class="acc-key">Bank</span><span class="acc-val">UBA</span></div>
+      <div class="acc-row"><span class="acc-key">Account Name</span><span class="acc-val">Chrisstars Mums Academy</span></div>
+      <div class="acc-num-row">
+        <div>
+          <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);font-weight:700;margin-bottom:.3rem">Account Number</div>
+          <span class="acc-num" id="acc-num">1029442950</span>
+        </div>
+        <button class="copy-btn" id="copy-btn" onclick="copyAcc()">📋 Copy</button>
+      </div>
+    </div>
+    <div class="amt-box">
+      <div class="amt-label">Amount to Send</div>
+      <div class="amt-num">₦7,999</div>
+    </div>
+    <a href="https://wa.me/message/2MXLI55H6KOBL1" target="_blank" class="wa-btn">💬 Click Here to Send Payment Proof</a>
+    <div class="secure-row">🔒 Safe & Secure · Instant Access After Payment</div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family:var(--serif);font-size:1.1rem;color:var(--gold2);margin-bottom:.5rem">Chrisstars Consulting</p>
+  <p>© 2026 Chrisstars Mums Academy. All rights reserved.</p>
+  <p style="margin-top:.5rem">Results shared are from real clients. Individual results may vary.</p>
+</footer>
+
+<a href="#payment" class="float-btn">💛 Get Blueprint · ₦7,999</a>
+
+<script>
+const START = Date.now();
+const DURATION = 23 * 3600;
+function tick() {
+  const elapsed = Math.floor((Date.now() - START) / 1000);
+  let left = Math.max(0, DURATION - elapsed);
+  const h = Math.floor(left / 3600);
+  const m = Math.floor((left % 3600) / 60);
+  const s = left % 60;
+  const p = n => String(n).padStart(2,'0');
+  document.getElementById('h-h').textContent = p(h);
+  document.getElementById('h-m').textContent = p(m);
+  document.getElementById('h-s').textContent = p(s);
+  document.getElementById('p-h').textContent = p(h);
+  document.getElementById('p-m').textContent = p(m);
+  document.getElementById('p-s').textContent = p(s);
+  document.getElementById('bar-time').textContent = p(h)+':'+p(m)+':'+p(s);
+}
+tick(); setInterval(tick, 1000);
+
+function copyAcc() {
+  const num = document.getElementById('acc-num').textContent;
+  const btn = document.getElementById('copy-btn');
+  if(navigator.clipboard){navigator.clipboard.writeText(num);}else{const el=document.createElement('textarea');el.value=num;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);}
+  btn.textContent='✓ Copied!';btn.classList.add('copied');
+  setTimeout(()=>{btn.textContent='📋 Copy';btn.classList.remove('copied');},2500);
+}
+
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
